@@ -20,18 +20,32 @@ const prismaMock = {
     find: async () => {
       return users;
     },
-    findById: async ({id}: {id: number}) => {
-      return users.find((user) => user.id === id)
+    findById: async ({ id }: { id: number }) => {
+      return users.find((user) => user.id === id);
     },
-    findByIdAndUpdate: async ({id, data}: {id: number; data: tUpdateUser}) => {
+    findByIdAndUpdate: async ({
+      id,
+      data,
+    }: {
+      id: number;
+      data: tUpdateUser;
+    }) => {
       const userIndex = users.findIndex((user) => user.id === id);
-      if (userIndex === -1){
-        return null
+      if (userIndex === -1) {
+        return null;
       }
-      const updateUser = { ...users[userIndex], ...data};
+      const updateUser = { ...users[userIndex], ...data };
       users[userIndex] = updateUser;
-      return updateUser
-    }
+      return updateUser;
+    },
+    findByIdAndDelete: async ({ id }: { id: number }) => {
+      const userIndex = users.findIndex((user) => user.id === id);
+      if (userIndex === -1) {
+        return null;
+      }
+      const deleteUser = users.splice(userIndex, 1)[0];
+      return deleteUser;
+    },
   },
 };
 
