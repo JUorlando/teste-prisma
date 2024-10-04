@@ -18,4 +18,6 @@ const userCreateSchema = userSchema.omit({ id: true });
 
 const userArraySchema = userSchema.array();
 
-export { userCreateSchema, userSchema, userArraySchema };
+const userUpdateSchema = userCreateSchema.partial();
+
+export { userCreateSchema, userSchema, userArraySchema, userUpdateSchema };
