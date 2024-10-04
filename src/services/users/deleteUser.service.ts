@@ -1,9 +1,9 @@
 import { AppError } from "../../errors";
-import prismaMock from "../../mocks/mock";
+import userMock from "../../mocks/user.mock";
 
 const deleteUserService = async (userId: number) => {
   try {
-    const user = await prismaMock.user.findByIdAndDelete({ id: userId });
+    const user = await userMock.user.findByIdAndDelete({ id: userId });
 
     if (!user) {
       throw new AppError("User not found.", 404);

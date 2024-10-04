@@ -2,13 +2,14 @@ import { tUser, tUpdateUser } from "../interfaces/user.interface";
 
 let users: tUser[] = [];
 
-const prismaMock = {
+const userMock = {
   user: {
-    create: async (data: { name: string; email: string; documents: any[] }) => {
+    create: async (data: { name: string; email: string; password: string; documents: any[] }) => {
       const newUser: tUser = {
         id: users.length + 1,
         name: data.name,
         email: data.email,
+        password: data.password,
         documents: data.documents,
       };
       users.push(newUser);
@@ -49,4 +50,4 @@ const prismaMock = {
   },
 };
 
-export default prismaMock;
+export default userMock;

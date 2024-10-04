@@ -1,9 +1,5 @@
 import { z } from "zod";
-
-const documentSchema = z.object({
-  name: z.string(),
-  status: z.string(),
-});
+import { documentSchema } from "./document.schema";
 
 const userSchema = z.object({
   id: z.number().optional(),
@@ -11,6 +7,7 @@ const userSchema = z.object({
     .string()
     .min(3, { message: "Name must be at least 3 characters long" }),
   email: z.string().email({ message: "Invalid email address" }),
+  password: z.string(),
   documents: z.array(documentSchema),
 });
 
