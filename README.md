@@ -28,7 +28,7 @@ Siga os passos abaixo para configurar e executar a aplicação localmente:
 1. **Clone o repositório:**
 
    ```bash
-   git clone https://github.com/seu_usuario/seu_repositorio.git
+   git clone https://github.com/JUorlando/teste-prisma.git
    cd seu_repositorio
 
 2. **Instale as dependências:**
