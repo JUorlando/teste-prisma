@@ -7,13 +7,15 @@ const documentSchema = z.object({
 
 const userSchema = z.object({
   id: z.number().optional(),
-  name: z.string().min(3, { message: "Name must be at least 3 characters long" }),
-  email: z
+  name: z
     .string()
-    .email({ message: "Invalid email address" }),
+    .min(3, { message: "Name must be at least 3 characters long" }),
+  email: z.string().email({ message: "Invalid email address" }),
   documents: z.array(documentSchema),
 });
 
 const userCreateSchema = userSchema.omit({ id: true });
 
-export { userCreateSchema, userSchema };
+const userArraySchema = userSchema.array();
+
+export { userCreateSchema, userSchema, userArraySchema };

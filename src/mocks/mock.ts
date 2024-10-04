@@ -15,10 +15,12 @@ const prismaMock = {
       return newUser;
     },
     findUnique: async ({ email }: { email: string }) => {
-      return users.find(user => user.email === email);
+      return users.find((user) => user.email === email);
+    },
+    find: async () => {
+      return users;
     },
   },
 };
 
 export default prismaMock;
-
