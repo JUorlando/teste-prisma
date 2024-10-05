@@ -27,9 +27,7 @@ Siga os passos abaixo para configurar e executar a aplicação localmente:
 
 1. **Clone o repositório:**
 
-   ```bash
    git clone https://github.com/JUorlando/teste-prisma.git
-   cd seu_repositorio
 
 2. **Instale as dependências:**
 
@@ -60,10 +58,10 @@ Siga os passos abaixo para configurar e executar a aplicação localmente:
     2- Você poderá visualizar todos os endpoints disponíveis, parâmetros esperados e exemplos de resposta.
 
 **Contato**
-
-    Desenvolvedor: José Orlando de Carvalho Júnior
-    E-mail: juniororlandocv@gmail.com
+      
+   Desenvolvedor: José Orlando de Carvalho Júnior
+   E-mail: juniororlandocv@gmail.com
 
 **Licença**
-
-    Este projeto está licenciado sob a MIT License.
+   
+   Este projeto está licenciado sob a MIT Licence
