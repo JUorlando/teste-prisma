@@ -3,12 +3,15 @@ import { globalErrors } from "./errors";
 import userRouter from "./routes/user.routes";
 import documentRouter from "./routes/document.routes";
 import authRouter from "./routes/auth.routes";
+import cors from "cors";
 import swaggerUi from "swagger-ui-express";
 import swaggerDocument from "../swagger.json";
 
 const app = express();
 
 app.use(express.json());
+
+app.use(cors());
 
 //ROTAS
 app.use("/api", userRouter);
