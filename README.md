@@ -39,9 +39,7 @@ Siga os passos abaixo para configurar e executar a aplicação localmente:
 
 3. **Configuração do Banco de Dados:**
 
-    O projeto está configurado para usar o Prisma com um banco de dados SQLite. Certifique-se de que o arquivo dev.db está presente na pasta raiz do projeto. Caso não esteja, você pode gerar um novo banco de dados com o seguinte comando:
-
-    npx prisma migrate dev --name init
+    O projeto está configurado para usar simular uma API real com Prisma. A pasta prisma contem o schema.prisma onde contém as models de user e document, a configuração do banco de dados é feita na pasta mock, onde podemos percorrer os arrays através de métodos criados, simulando assim um banco de dados real.
 
 4. **Executar a Aplicação:**
 
@@ -60,10 +58,6 @@ Siga os passos abaixo para configurar e executar a aplicação localmente:
     http://localhost:8888/api-docs
 
     2- Você poderá visualizar todos os endpoints disponíveis, parâmetros esperados e exemplos de resposta.
-
-**Contribuições**
-
-    Contribuições são bem-vindas! Se você deseja melhorar este projeto, sinta-se à vontade para fazer um fork e enviar um pull request.
 
 **Contato**
 
