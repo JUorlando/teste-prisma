@@ -1,11 +1,11 @@
 import { AppError } from "../../errors";
-import { tUser, tUpdateUser } from "../../interfaces/user.interface";
+import { tUpdateUser } from "../../interfaces/user.interface";
 import userMock from "../../mocks/user.mock";
 
 const updateUserService = async (
   payload: tUpdateUser,
   userId: number
-): Promise<tUser> => {
+): Promise<tUpdateUser> => {
   try {
     const user = await userMock.user.findById({ id: userId });
 

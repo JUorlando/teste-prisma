@@ -1,16 +1,16 @@
-import { tUser, tUpdateUser } from "../interfaces/user.interface";
+import { tUpdateUser, tCreateUser } from "../interfaces/user.interface";
 
-let users: tUser[] = [];
+let users: tCreateUser[] = [];
 
 const userMock = {
   user: {
-    create: async (data: { name: string; email: string; password: string; documents: any[] }) => {
-      const newUser: tUser = {
+    create: async (data: { name: string; email: string; password: string; documents?: any[] }) => {
+      const newUser: tCreateUser = {
         id: users.length + 1,
         name: data.name,
         email: data.email,
         password: data.password,
-        documents: data.documents,
+        documents: data.documents || [],
       };
       users.push(newUser);
       return newUser;
@@ -19,7 +19,7 @@ const userMock = {
       return users.find((user) => user.email === email);
     },
     find: async () => {
-      return users;
+      return users.map(({ password, ...userWithoutPassword }) => userWithoutPassword);
     },
     findById: async ({ id }: { id: number }) => {
       return users.find((user) => user.id === id);

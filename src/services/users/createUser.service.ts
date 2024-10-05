@@ -3,7 +3,7 @@ import { AppError } from "../../errors";
 import bcrypt from "bcryptjs";
 import userMock from "../../mocks/user.mock";
 
-const createUserService = async (payload: tCreateUser): Promise<tUser> => {
+const createUserService = async (payload: tCreateUser): Promise<tUser | any> => {
   try {
     const userExists = await userMock.user.findUnique({ email: payload.email });
 
@@ -18,10 +18,12 @@ const createUserService = async (payload: tCreateUser): Promise<tUser> => {
       name: payload.name,
       email: payload.email,
       password: hashedPassword,
-      documents: payload.documents,
+      documents: payload.documents || [],
     });
 
-    return newUser;
+    const {id, name, email, documents} = newUser
+
+    return {id, name, email, documents};
   } catch (err: any) {
     console.error(err);
     throw new AppError("An error occurred while creating the user.", 500);

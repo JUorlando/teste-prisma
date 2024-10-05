@@ -24,7 +24,7 @@ const createDocumentService = async (
       userId: user.id,
     });
 
-    user.documents.push(newDocument);
+    user.documents?.push(newDocument);
 
     return newDocument;
   } catch (err: any) {

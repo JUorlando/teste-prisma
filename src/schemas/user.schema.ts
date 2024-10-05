@@ -7,11 +7,12 @@ const userSchema = z.object({
     .string()
     .min(3, { message: "Name must be at least 3 characters long" }),
   email: z.string().email({ message: "Invalid email address" }),
-  password: z.string(),
-  documents: z.array(documentSchema),
+  documents: z.array(documentSchema).optional(),
 });
 
-const userCreateSchema = userSchema.omit({ id: true });
+const userCreateSchema = userSchema.extend({
+  password: z.string(),
+});
 
 const userArraySchema = userSchema.array();
 

@@ -349,7 +349,7 @@
             }
           }
         },
-        "required": ["name", "email", "password", "documents"]
+        "required": ["name", "email", "password"]
       },
       "Document": {
         "type": "object",
